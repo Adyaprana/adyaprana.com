@@ -57,7 +57,9 @@
 
 ## 🧑‍💻 Tech Stack
 
+
 - 🌐 **Frontend**: `HTML5`, `CSS3`, `JavaScript`
+- 🐍 **Backend**: `Python 3.x`, `Flask`
 - 🎨 **UI Framework**: Pure CSS with responsive layout
 - 🔧 **Tools**: `VSCode`, `Git`, `GitHub Pages`
 - 🛠️ **Deployment**: GitHub Pages
@@ -95,14 +97,22 @@ cd adyaprana.com
 
 ```bash
 adyaprana.com/
-├── static/
-│   ├── assets/          # Logos, images, icons
-│   ├── css/             # Stylesheets
-│   └── js/              # Scripts for theme toggle, interactivity
-├── pages/               # Sub-pages like projects, blog, contact
-├── index.html           # Landing page
-├── LICENSE
-└── README.md
+├── app.py                 # Flask application entrypoint
+├── Procfile               # For Heroku deployment
+├── README.md              # Project overview and docs
+├── LICENSE                # MIT License
+├── requirements.txt       # Python dependencies
+├── .gitignore             # Files to ignore in Git
+├── static/                # Public assets
+│   ├── images/            # Logos, icons, screenshots, etc.
+│   ├── css/               # style.css
+│   └── js/                # main.js (theme toggle, interactivity)
+└── templates/             # Jinja2 HTML templates
+    ├── base.html
+    ├── index.html
+    ├── projects.html
+    ├── blog.html
+    └── contact.html...
 ```
 ## 📸 Screenshots
 
