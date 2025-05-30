@@ -1,0 +1,363 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }} - Project Details-adyaprana.com{% endblock %}
+
+{% block content %}
+<!-- Project Hero Section -->
+<section class="project-detail-hero">
+    <div class="container">
+        <div class="project-hero-content" data-aos="fade-up">
+            <div class="project-breadcrumb">
+                <a href="{{ url_for('index') }}#projects" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Projects
+                </a>
+                <span class="project-category">{{ project.category }}</span>
+            </div>
+            <h1 class="project-hero-title">{{ project.title }}</h1>
+            <p class="project-hero-subtitle">{{ project.summary }}</p>
+            <div class="project-status-info">
+                <span class="status-badge status-{{ project.status.lower() }}">{{ project.status }}</span>
+                <span class="client-info">{{ project.client }}</span>
+                <span class="project-timeline">{{ project.timeline }}</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Overview -->
+<section class="project-overview">
+    <div class="container">
+        <div class="project-overview-grid">
+            <!-- Main Image -->
+            <div class="project-main-image" data-aos="fade-right">
+             <img src="{{ url_for('static', filename=project.image.split('static/')[-1]) }}" alt="{{ project.title }} Main Image">
+
+
+
+
+                <div class="project-actions">
+                    <a href="{{ project.live_url }}" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="{{ project.github_url }}" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-github"></i>
+                        View Code
+                    </a>
+                    <a href="{{ project.video_url }}" target="_blank" class="btn btn-outline">
+                        <i class="fas fa-play"></i>
+                        Watch Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Info -->
+            <div class="project-info" data-aos="fade-left">
+                <div class="project-info-card">
+                    <h3>Project Overview</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    
+                    <div class="project-details-grid">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <div>
+                                <strong>Timeline</strong>
+                                <span>{{ project.timeline }}</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <strong>Client</strong>
+                                <span>{{ project.client }}</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tag"></i>
+                            <div>
+                                <strong>Category</strong>
+                                <span>{{ project.category }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Metrics -->
+                    <div class="project-metrics">
+                        <h4>Project Impact</h4>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-value">40%</div>
+                                <div class="metric-label">Productivity Increase</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">500+</div>
+                                <div class="metric-label">Active Users</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">99.9%</div>
+                                <div class="metric-label">Uptime</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Features -->
+<section class="project-features">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Key Features</h2>
+        <div class="features-grid">
+            {% for feature in project.features %}
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h4 class="feature-title">{{ feature }}</h4>
+                <p class="feature-description">Advanced implementation of {{ feature.lower() }} with modern best practices.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="project-tech-stack">
+    <div class="container">
+        <div class="tech-stack-content" data-aos="fade-up">
+            <h2 class="section-title">Technology Stack</h2>
+            <p class="tech-stack-description">
+                This project leverages cutting-edge technologies to deliver exceptional performance and user experience.
+            </p>
+            <div class="tech-stack-categories">
+                <div class="tech-category">
+                    <h4>Frontend</h4>
+                    <div class="tech-items">
+                        {% for tech in project.tech_stack[:4] %}
+                        <div class="tech-item" data-aos="zoom-in" data-aos-delay="{{ loop.index * 50 }}">
+                            <div class="tech-icon">
+                                <i class="fab fa-{{ tech.lower() }}"></i>
+                            </div>
+                            <span class="tech-name">{{ tech }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Backend & Database</h4>
+                    <div class="tech-items">
+                        {% for tech in project.tech_stack[4:] %}
+                        <div class="tech-item" data-aos="zoom-in" data-aos-delay="{{ loop.index * 50 }}">
+                            <div class="tech-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <span class="tech-name">{{ tech }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Project Gallery -->
+<section class="project-gallery">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Project Gallery</h2>
+        <p class="gallery-description" data-aos="fade-up">
+            Explore different aspects and views of the project through these screenshots and demonstrations.
+        </p>
+        <div class="gallery-grid">
+            {% for image in project.gallery %}
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <img src="{{ url_for('static', filename=image) }}" alt="Project screenshot {{ loop.index }}">
+                <div class="gallery-overlay">
+                    <button class="gallery-zoom" data-image="{{ url_for('static', filename=image) }}">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <div class="gallery-info">
+                        <h5>Screenshot {{ loop.index }}</h5>
+                        <p>
+                            {{ ['Dashboard View', 'Analytics Panel', 'Mobile Interface', 'Admin Features'][loop.index0]
+                            if loop.index <= 4 else 'Project Feature' }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Project Development Process -->
+<section class="project-process">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Development Process</h2>
+        <div class="process-timeline">
+            <div class="process-step" data-aos="fade-right">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h4>Planning & Research</h4>
+                    <p>Comprehensive analysis of requirements and market research to define project scope and objectives.</p>
+                </div>
+            </div>
+            <div class="process-step" data-aos="fade-left">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h4>Design & Prototyping</h4>
+                    <p>Creating wireframes, mockups, and interactive prototypes to visualize the final product.</p>
+                </div>
+            </div>
+            <div class="process-step" data-aos="fade-right">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h4>Development & Testing</h4>
+                    <p>Agile development approach with continuous testing and quality assurance throughout the process.</p>
+                </div>
+            </div>
+            <div class="process-step" data-aos="fade-left">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h4>Deployment & Monitoring</h4>
+                    <p>Production deployment with ongoing monitoring, maintenance, and performance optimization.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Challenges & Impact -->
+<section class="project-details-section">
+    <div class="container">
+        <div class="project-details-grid">
+            <div class="detail-card" data-aos="fade-right">
+                <div class="detail-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3>Challenges Overcome</h3>
+                <p>{{ project.challenges }}</p>
+                <div class="challenge-list">
+                    <div class="challenge-item">
+                        <i class="fas fa-check"></i>
+                        <span>Performance Optimization</span>
+                    </div>
+                    <div class="challenge-item">
+                        <i class="fas fa-check"></i>
+                        <span>Scalability Solutions</span>
+                    </div>
+                    <div class="challenge-item">
+                        <i class="fas fa-check"></i>
+                        <span>Security Implementation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-card" data-aos="fade-left">
+                <div class="detail-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Project Impact</h3>
+                <p>{{ project.impact }}</p>
+                <div class="impact-metrics">
+                    <div class="impact-item">
+                        <div class="impact-number">40%</div>
+                        <div class="impact-label">Efficiency Gain</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">25%</div>
+                        <div class="impact-label">Time Saved</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">500+</div>
+                        <div class="impact-label">Users Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Projects -->
+{% if related_projects %}
+<section class="related-projects">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Related Projects</h2>
+    <div class="related-projects-grid">
+      {% for related_project in related_projects %}
+      <div class="related-project-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+        <div class="related-project-image">
+          <img 
+            src="{{ url_for('static', filename=related_project.image) }}" 
+            alt="{{ related_project.title }}"
+            class="related-project-img"
+          >
+          <div class="related-project-overlay">
+            <a 
+              href="{{ url_for('project_detail', project_id=related_project.id) }}" 
+              class="btn btn-primary btn-sm"
+            >
+              View Project
+            </a>
+          </div>
+        </div>
+        <div class="related-project-content">
+          <span class="project-category">{{ related_project.category }}</span>
+          <h4 class="related-project-title">{{ related_project.title }}</h4>
+          <p class="related-project-summary">{{ related_project.summary }}</p>
+          <div class="related-project-tech">
+            {% for tech in related_project.tech_stack[:3] %}
+            <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+
+<!-- Project CTA -->
+<section class="project-cta">
+    <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+            <h3>Interested in Similar Projects?</h3>
+            <p>Let's discuss how we can bring your ideas to life with cutting-edge technology and innovative solutions.</p>
+            <div class="cta-actions">
+                <a href="{{ url_for('index') }}#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Get In Touch
+                </a>
+                <a href="{{ url_for('index') }}#projects" class="btn btn-outline">
+                    <i class="fas fa-folder-open"></i>
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Modal -->
+<div class="image-modal" id="image-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close" id="modal-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <img id="modal-image" src="/placeholder.svg" alt="">
+        <div class="modal-navigation">
+            <button class="modal-nav-btn" id="modal-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="modal-nav-btn" id="modal-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}

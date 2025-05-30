@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}adyaprana.com{% endblock %}</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='images/favicon/favicon-96x96.png') }}">
+<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon/favicon.svg') }}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon/favicon.ico') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon/apple-touch-icon.png') }}">
+<link rel="manifest" href="{{ url_for('static', filename='images/favicon/site.webmanifest') }}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog-social.css') }}">
++   <!-- AOS animations CSS -->
++   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- base.html -->
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ url_for('index') }}" class="logo-text">Portfolio</a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="nav-menu" id="nav-menu">
+                <a href="{{ url_for('index') }}" class="nav-link" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="{{ url_for('index') }}#about" class="nav-link" data-section="about">
+                    <i class="fas fa-user"></i>
+                    <span>About</span>
+                </a>
+                <a href="{{ url_for('index') }}#projects" class="nav-link" data-section="projects">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="{{ url_for('blog') }}" class="nav-link" data-page="blog">
+                    <i class="fas fa-blog"></i>
+                    <span>Blog</span>
+                </a>
+                <a href="{{ url_for('social') }}" class="nav-link" data-page="social">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Social</span>
+                </a>
+                <a href="{{ url_for('index') }}#education" class="nav-link" data-section="education">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Education</span>
+                </a>
+                <a href="{{ url_for('index') }}#future" class="nav-link" data-section="future">
+                    <i class="fas fa-rocket"></i>
+                    <span>Future</span>
+                </a>
+                <a href="{{ url_for('index') }}#contact" class="nav-link" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                 <!-- <a href="{{ url_for('index') }}#github" class="nav-link" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>github</span>
+                     <a href="{{ url_for('index') }}#linkedin" class="nav-link" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>linkedin</span> -->
+                </a>
+                </a>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">Adyaprana Pradhan</span>
+                </div>
+                <p class="footer-tagline">Full-Stack Developer | AI/ML Enthusiast | DevOps Learner</p>
+                <div class="footer-social">
+                    <a href="https://github.com/Adyaprana" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/adyaprana21/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:adyaprana21@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year"></span> Adyaprana. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/blog-social.js') }}"></script>
+</body>
+</html>

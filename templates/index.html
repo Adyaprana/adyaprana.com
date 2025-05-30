@@ -1,0 +1,468 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="hero-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    
+    <div class="hero-container">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <div class="hero-image" data-aos="zoom-in" data-aos-delay="200">
+            <img src="{{ url_for('static', filename='images/hero-profile.jpg') }}" alt="Profile" class="profile-img">
+                <div class="profile-ring"></div>
+            </div>
+            
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">Adyaprana Pradhan</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">
+                Full-Stack Developer | AI/ML Enthusiast | DevOps Learner
+            </p>
+            
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-folder-open"></i>
+                    View Portfolio
+                </a>
+                <a href="https://www.linkedin.com/in/adyaprana21/" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-linkedin"></i>
+                    Connect on LinkedIn
+                </a>
+                <a href="https://github.com/Adyaprana" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github"></i>
+                    Explore GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">
+                Passionate developer with expertise in full-stack development, AI/ML, and DevOps practices
+            </p>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right">
+                <div class="about-card">
+                    <h3>My Journey</h3>
+                    <p>
+                        I'm a passionate full-stack developer with a strong foundation in modern web technologies and a
+                        growing expertise in AI/ML and DevOps. My journey began with curiosity about how things work behind
+                        the scenes, and it has evolved into a deep love for creating innovative solutions that make a
+                        difference.
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-stack">
+                    <h4>Tech Stack</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-image" data-aos="fade-left">
+                <div class="image-wrapper">
+                    <img src="{{ url_for('static', filename='images/profile.png') }}" alt="About me">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A showcase of my recent work and technical expertise</p>
+        </div>
+        
+        <div class="projects-grid">
+            {% for project in projects %}
+            <div class="project-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }} Main Image" class="img-fluid"/>
+                    <div class="project-overlay">
+                        <a href="{{ url_for('project_detail', project_id=project.id) }}" class="btn btn-primary">
+                            <i class="fas fa-eye"></i>
+                            View Details
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">{{ project.title }}</h3>
+                        <span class="project-status status-{{ project.status.lower() }}">{{ project.status }}</span>
+                    </div>
+                    <p class="project-summary">{{ project.summary }}</p>
+                    
+                    <!-- Project Stats -->
+                    <div class="project-stats">
+                        <div class="project-stat">
+                            <i class="fas fa-calendar"></i>
+                            <span>{{ project.timeline.split(',')[0] }}</span>
+                        </div>
+                        
+                     <div class="project-stat">
+                            <i class="fas fa-tag"></i>
+                            <span>{{ project.category }}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-tech">
+                        {% for tech in project.tech_stack[:4] %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                        {% if project.tech_stack|length > 4 %}
+                        <span class="tech-tag-more">+{{ project.tech_stack|length - 4 }} more</span>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Project Actions -->
+                    <div class="project-actions">
+                        <a href="{{ url_for('project_detail', project_id=project.id) }}" class="btn btn-primary btn-sm">
+                            <i class="fas fa-info-circle"></i>
+                            Full Details
+                        </a>
+                        <a href="{{ project.live_url }}" target="_blank" class="btn btn-outline btn-sm">
+                            <i class="fas fa-external-link-alt"></i>
+                            Live Demo
+                        </a>
+                        <a href="{{ project.github_url }}" target="_blank" class="btn btn-outline btn-sm">
+                            <i class="fab fa-github"></i>
+                            Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- View All Projects Button -->
+        <div class="projects-cta" data-aos="fade-up">
+            <a href="{{ url_for('blog') }}" class="btn btn-outline">
+                <i class="fas fa-blog"></i>
+                Read My Blog
+            </a>
+            <a href="{{ url_for('social') }}" class="btn btn-outline">
+                <i class="fas fa-share-alt"></i>
+                Follow My Journey
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="education-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">My academic journey and continuous learning path</p>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-line"></div>
+            {% for edu in education %}
+            <div class="timeline-item" data-aos="fade-{{ 'right' if loop.index0 % 2 == 0 else 'left' }}" data-aos-delay="{{ loop.index0 * 200 }}">
+                <div class="timeline-content">
+                    <div class="education-card">
+                        <div class="education-header">
+                            <img src="{{ edu.logo }}" alt="{{ edu.institution }}" class="education-logo">
+                            <div class="education-info">
+                                <h3 class="education-institution">{{ edu.institution }}</h3>
+                                <p class="education-period">{{ edu.period }}</p>
+                            </div>
+                        </div>
+                        <h4 class="education-degree">{{ edu.degree }}</h4>
+                        <p class="education-description">{{ edu.description }}</p>
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- GitHub Section -->
+<section id="github" class="github-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">GitHub Activity</h2>
+            <p class="section-subtitle">My open source contributions and coding activity</p>
+        </div>
+        
+        <div class="github-stats">
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="stat-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="stat-number">{{ github_stats.repositories }}</div>
+                <div class="stat-label">Repositories</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-number">{{ github_stats.stars }}</div>
+                <div class="stat-label">Stars Earned</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number">{{ github_stats.followers }}</div>
+                <div class="stat-label">Followers</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-icon">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <div class="stat-number">{{ github_stats.contributions }}</div>
+                <div class="stat-label">Contributions</div>
+            </div>
+        </div>
+        
+        <div class="github-cta" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://github.com/Adyaprana" target="_blank" class="btn btn-dark">
+                <i class="fab fa-github"></i>
+                Follow on GitHub
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- LinkedIn Section -->
+<section id="linkedin" class="linkedin-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Professional Network</h2>
+            <p class="section-subtitle">Connect with me on LinkedIn for professional opportunities</p>
+        </div>
+        
+        <div class="linkedin-content">
+            <div class="linkedin-info" data-aos="fade-right">
+                <div class="linkedin-card">
+                    <div class="linkedin-header">
+                        <div class="linkedin-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h3>LinkedIn Profile</h3>
+                            <p class="connection-count">500+ Connections</p>
+                        </div>
+                    </div>
+                    
+                    <div class="linkedin-stats">
+                        <div class="linkedin-stat">
+                            <span class="stat-label">Certifications</span>
+                            <span class="stat-value">8</span>
+                        </div>
+                        <div class="linkedin-stat">
+                            <span class="stat-label">Recommendations</span>
+                            <span class="stat-value">12</span>
+                        </div>
+                        <div class="linkedin-stat">
+                            <span class="stat-label">Posts Published</span>
+                            <span class="stat-value">25</span>
+                        </div>
+                    </div>
+                    
+                    <div class="linkedin-buttons">
+                        <a href="https://linkedin.com/in/adyaprana21" target="_blank" class="btn btn-linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            Connect
+                        <a href="{{ url_for('static', filename='images/Adyaprana-pradhan-Resume.pdf') }}"  class="btn btn-outline"  download="Adyaprana-pradhan-Resume.pdf">
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="endorsements" data-aos="fade-left">
+                <h3>Recent Endorsements</h3>
+                <div class="endorsement-list">
+                    <div class="endorsement-item">
+                        <p class="endorsement-quote">"Exceptional student with strong technical skills and innovative thinking."</p>
+                        <div class="endorsement-author">
+                            <strong>Prof. Satya Ranjan Dash</strong>
+                            <span>Dean, School of Computer Applications, KIIT University</span>
+                        </div>
+                    </div>
+                    <div class="endorsement-item">
+                        <p class="endorsement-quote">"Great collaboration skills and deep understanding of modern web technologies."</p>
+                        <div class="endorsement-author">
+                            <strong>Dr. Kamakhya Narain Singh</strong>
+                            <span>Professor, School of Computer Applications, KIIT University</span>
+                        </div>
+                    </div>
+                    <div class="endorsement-item">
+                        <p class="endorsement-quote">"Reliable team player who consistently delivers high-quality solutions."</p>
+                        <div class="endorsement-author">
+                            <strong>Veena Goswami</strong>
+                            <span>Director, School of Computer Applications, KIIT University</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Future Projects Section -->
+<section id="future" class="future-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Future Projects</h2>
+            <p class="section-subtitle">Upcoming projects and ideas in development</p>
+        </div>
+        
+        <div class="future-grid">
+            {% for project in future_projects %}
+            <div class="future-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="future-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="future-content">
+                    <div class="future-header">
+                        <h3 class="future-title">{{ project.title }}</h3>
+                        <span class="status-badge status-{{ project.status.lower().replace(' ', '-') }}">
+                            {{ project.status }}
+                        </span>
+                    </div>
+                    <p class="future-description">{{ project.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's discuss opportunities and collaborate on exciting projects</p>
+        </div>
+        
+        <div class="contact-content">
+            <div class="contact-info" data-aos="fade-right">
+                <h3>Contact Information</h3>
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <strong>Email</strong>
+                            <span>adyaprana21@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <strong>Phone</strong>
+                            <span>+91 9237966762</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <strong>Location</strong>
+                            <span>Bhubaneswar, India</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <h4>Social Links</h4>
+                    <div class="social-buttons">
+                        <a href="https://github.com/Adyaprana" target="_blank" class="btn btn-outline btn-sm">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/adyaprana21/" target="_blank" class="btn btn-outline btn-sm">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                        <a href="mailto:adyaprana21@gmail.com" class="btn btn-outline btn-sm">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-wrapper" data-aos="fade-left">
+                <div class="contact-form-card">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

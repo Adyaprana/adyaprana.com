@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block title %}Social Media - adyaprana.com{% endblock %}
+
+{% block content %}
+<!-- Social Hero Section -->
+<section class="social-hero">
+    <div class="container">
+        <div class="social-hero-content" data-aos="fade-up">
+            <h1 class="social-hero-title">Social Media</h1>
+            <p class="social-hero-subtitle">
+                Follow my journey, insights, and updates across different platforms
+            </p>
+            <div class="social-stats">
+                <div class="social-stat">
+                    <div class="stat-number">2.5K</div>
+                    <div class="stat-label">Followers</div>
+                </div>
+                <div class="social-stat">
+                    <div class="stat-number">150</div>
+                    <div class="stat-label">Posts</div>
+                </div>
+                <div class="social-stat">
+                    <div class="stat-number">5.2K</div>
+                    <div class="stat-label">Engagement</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Posts Section -->
+<section class="social-posts-section">
+    <div class="container">
+        <!-- Platform Filter -->
+        <div class="platform-filter" data-aos="fade-up">
+            <button class="filter-btn active" data-platform="all">All Platforms</button>
+            <button class="filter-btn" data-platform="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
+            </button>
+            <button class="filter-btn" data-platform="Twitter">
+                <i class="fab fa-twitter"></i>
+                Twitter
+            </button>
+            <button class="filter-btn" data-platform="Instagram">
+                <i class="fab fa-instagram"></i>
+                Instagram
+            </button>
+            <button class="filter-btn" data-platform="GitHub">
+                <i class="fab fa-github"></i>
+                GitHub
+            </button>
+        </div>
+
+        <!-- Social Posts Grid -->
+        <div class="social-posts-grid">
+            {% for post in posts %}
+            <article class="social-post-card" data-platform="{{ post.platform }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="social-post-header">
+                    <div class="platform-info">
+                        <div class="platform-icon {{ post.platform.lower() }}">
+                            {% if post.platform == 'LinkedIn' %}
+                            <i class="fab fa-linkedin"></i>
+                            {% elif post.platform == 'Twitter' %}
+                            <i class="fab fa-twitter"></i>
+                            {% elif post.platform == 'Instagram' %}
+                            <i class="fab fa-instagram"></i>
+                            {% elif post.platform == 'GitHub' %}
+                            <i class="fab fa-github"></i>
+                            {% endif %}
+                        </div>
+                        <div class="platform-details">
+                            <span class="platform-name">{{ post.platform }}</span>
+                            <span class="post-date">{{ post.date }}</span>
+                        </div>
+                    </div>
+                    <a href="{{ post.link }}" target="_blank" class="external-link">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                {% if post.image %}
+                <div class="social-post-image">
+                    <img src="{{ url_for('static', filename='images/' ~ post.image.split('/')[-1]) }}" alt="Image for post {{ post.id }}">     
+                </div>
+                {% endif %}
+
+                <div class="social-post-content">
+                    <p class="social-post-text">{{ post.content }}</p>
+                </div>
+
+                <div class="social-post-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-heart"></i>
+                        <span>{{ post.likes }}</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-comment"></i>
+                        <span>{{ post.comments }}</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-share"></i>
+                        <span>{{ post.shares }}</span>
+                    </div>
+                </div>
+
+                <div class="social-post-actions">
+                    <button class="action-btn">
+                        <i class="fas fa-heart"></i>
+                        Like
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-comment"></i>
+                        Comment
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-share"></i>
+                        Share
+                    </button>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-section" data-aos="fade-up">
+            <button class="btn btn-outline load-more-btn">
+                <i class="fas fa-plus"></i>
+                Load More Posts
+            </button>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links-section" data-aos="fade-up">
+            <h3>Connect With Me</h3>
+            <div class="social-links-grid">
+                <a href="https://www.linkedin.com/in/adyaprana21/" target="_blank" class="social-link-card linkedin">
+                    <div class="social-link-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="social-link-info">
+                        <h4>LinkedIn</h4>
+                        <p>Professional updates and insights</p>
+                        <span class="follower-count">1.2K followers</span>
+                    </div>
+                </a>
+                <a href="https://twitter.com/adyaprana21" target="_blank" class="social-link-card twitter">
+                    <div class="social-link-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="social-link-info">
+                        <h4>Twitter</h4>
+                        <p>Quick thoughts and tech tips</p>
+                        <span class="follower-count">850 followers</span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/tensor_photos/" target="_blank" class="social-link-card instagram">
+                    <div class="social-link-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-link-info">
+                        <h4>Instagram</h4>
+                        <p>Behind the scenes coding life</p>
+                        <span class="follower-count">650 followers</span>
+                    </div>
+                </a>
+                <a href="https://github.com/Adyaprana" target="_blank" class="social-link-card github">
+                    <div class="social-link-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="social-link-info">
+                        <h4>GitHub</h4>
+                        <p>Open source projects and code</p>
+                        <span class="follower-count">89 followers</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

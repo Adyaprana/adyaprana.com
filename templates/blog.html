@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Blog - adyaprana.com{% endblock %}
+
+{% block content %}
+<!-- Blog Hero Section -->
+<section class="blog-hero">
+    <div class="container">
+        <div class="blog-hero-content" data-aos="fade-up">
+            <h1 class="blog-hero-title">My Blog</h1>
+            <p class="blog-hero-subtitle">
+                Insights, tutorials, and thoughts on web development, AI/ML, and technology trends
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Posts Section -->
+<section class="blog-posts-section">
+    <div class="container">
+        <!-- Featured Post -->
+        {% if posts %}
+        <div class="featured-post" data-aos="fade-up">
+            <div class="featured-post-content">
+                <div class="featured-post-image">
+                   <img src="{{ url_for('static', filename=posts[0].image) }}" alt="{{ posts[0].title }}">
+                    <div class="featured-badge">Featured</div>
+                </div>
+                <div class="featured-post-info">
+                    <div class="post-meta">
+                        <span class="post-category">{{ posts[0].category }}</span>
+                        <span class="post-date">{{ posts[0].date }}</span>
+                        <span class="post-read-time">{{ posts[0].read_time }}</span>
+                    </div>
+                    <h2 class="featured-post-title">
+                        <a href="{{ url_for('blog_post', post_id=posts[0].id) }}">{{ posts[0].title }}</a>
+                    </h2>
+                    <p class="featured-post-excerpt">{{ posts[0].excerpt }}</p>
+                    <div class="post-stats">
+                        <span class="post-stat">
+                            <i class="fas fa-eye"></i>
+                            {{ posts[0].views }} views
+                        </span>
+                        <span class="post-stat">
+                            <i class="fas fa-heart"></i>
+                            {{ posts[0].likes }} likes
+                        </span>
+                    </div>
+                    <a href="{{ url_for('blog_post', post_id=posts[0].id) }}" class="btn btn-primary">
+                        Read Full Article
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Blog Grid -->
+        <div class="blog-grid">
+            {% for post in posts[1:] %}
+            <article class="blog-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="blog-card-image">
+                    <img src="{{ url_for('static', filename=post.image) }}" alt="{{ post.title }}">
+                    <div class="blog-card-overlay">
+                        <a href="{{ url_for('blog_post', post_id=post.id) }}" class="blog-card-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog-card-content">
+                    <div class="post-meta">
+                        <span class="post-category">{{ post.category }}</span>
+                        <span class="post-date">{{ post.date }}</span>
+                    </div>
+                    <h3 class="blog-card-title">
+                        <a href="{{ url_for('blog_post', post_id=post.id) }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="blog-card-excerpt">{{ post.excerpt }}</p>
+                    <div class="blog-card-footer">
+                        <div class="post-stats">
+                            <span class="post-stat">
+                                <i class="fas fa-eye"></i>
+                                {{ post.views }}
+                            </span>
+                            <span class="post-stat">
+                                <i class="fas fa-heart"></i>
+                                {{ post.likes }}
+                            </span>
+                        </div>
+                        <span class="post-read-time">{{ post.read_time }}</span>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div class="newsletter-section" data-aos="fade-up">
+            <div class="newsletter-card">
+                <div class="newsletter-content">
+                    <h3>Stay Updated</h3>
+                    <p>Get the latest articles and insights delivered to your inbox</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+                <div class="newsletter-image">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
