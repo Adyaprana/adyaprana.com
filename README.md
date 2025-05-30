@@ -1,236 +1,158 @@
-# Luxury Developer Portfolio - Flask Version
+<!--
+  ╔═════════════════════════════════════════╗
+  ║         Adyaprana.com README           ║
+  ╚═════════════════════════════════════════╝
+-->
 
-A premium, modern developer portfolio website built with Python Flask, featuring luxury design elements, smooth animations, and responsive layout.
-
-## ✨ Features
-
-### Design & UI
-- **Luxury Design**: Premium glassmorphism effects and gradient backgrounds
-- **Dark/Light Mode**: Seamless theme switching with smooth transitions
-- **Responsive Layout**: Mobile-first design that works on all devices
-- **Smooth Animations**: AOS library integration with custom CSS animations
-- **Modern Typography**: Playfair Display and Inter font combination
-
-### Sections
-- **Hero Section**: Animated introduction with floating blob backgrounds
-- **About**: Professional overview with tech stack and statistics
-- **Projects**: Interactive project cards with detailed modals
-- **Education**: Timeline layout with institution information
-- **GitHub**: Statistics display with contribution metrics
-- **LinkedIn**: Professional network showcase with endorsements
-- **Future Projects**: Roadmap-style project planning
-- **Contact**: Professional contact form with social links
-
-### Technical Features
-- **Flask Backend**: Python web framework for routing and data handling
-- **Responsive Design**: CSS Grid and Flexbox layouts
-- **Interactive Modals**: Project detail popups with AJAX loading
-- **Form Handling**: Contact form with validation and feedback
-- **Theme Persistence**: Local storage for user preferences
-- **Smooth Scrolling**: Custom navigation with active section highlighting
-
-## 🚀 Installation & Setup
-
-### Prerequisites
-- Python 3.7 or higher
-- pip (Python package installer)
-
-### Installation Steps
-
-1. **Clone the repository**
-   \`\`\`bash
-   git clone <repository-url>
-   cd flask-luxury-portfolio
-   \`\`\`
-
-2. **Create virtual environment**
-   \`\`\`bash
-   python -m venv venv
-   
-   # On Windows
-   venv\\Scripts\\activate
-   
-   # On macOS/Linux
-   source venv/bin/activate
-   \`\`\`
-
-3. **Install dependencies**
-   \`\`\`bash
-   pip install -r requirements.txt
-   \`\`\`
-
-4. **Create required directories**
-   \`\`\`bash
-   mkdir static/images
-   \`\`\`
-
-5. **Add your images**
-   - Add your profile photo as \`static/images/profile.jpg\`
-   - Add about section image as \`static/images/about.jpg\`
-   - Add project images as \`static/images/project1.jpg\`, \`project2.jpg\`, etc.
-   - Add education logos as \`static/images/kiit-logo.png\`, \`nist-logo.png\`
-
-6. **Run the application**
-   \`\`\`bash
-   python app.py
-   \`\`\`
-
-7. **Open in browser**
-   Navigate to \`http://localhost:5000\`
-
-## 📁 Project Structure
-
-\`\`\`
-flask-luxury-portfolio/
-│
-├── app.py                 # Main Flask application
-├── requirements.txt       # Python dependencies
-├── README.md             # Project documentation
-│
-├── templates/            # HTML templates
-│   ├── base.html         # Base template with navigation
-│   └── index.html        # Main portfolio page
-│
-├── static/               # Static files
-│   ├── css/
-│   │   └── style.css     # Main stylesheet
-│   ├── js/
-│   │   └── script.js     # JavaScript functionality
-│   └── images/           # Image assets
-│       ├── profile.jpg
-│       ├── about.jpg
-│       ├── project1.jpg
-│       ├── project2.jpg
-│       ├── project3.jpg
-│       ├── kiit-logo.png
-│       └── nist-logo.png
-\`\`\`
-
-## 🎨 Customization
-
-### Personal Information
-Edit the following in \`app.py\`:
-- Update project data in \`projects_data\`
-- Modify education information in \`education_data\`
-- Change future projects in \`future_projects_data\`
-- Update GitHub stats in \`github_stats\`
-
-### Styling
-- Modify CSS variables in \`static/css/style.css\` for colors and themes
-- Update fonts by changing the Google Fonts imports
-- Customize animations by modifying AOS settings
-
-### Content
-- Replace placeholder text in \`templates/index.html\`
-- Update social media links and contact information
-- Add your actual project images and descriptions
-
-## 🔧 Configuration
-
-### Environment Variables
-Create a \`.env\` file for sensitive configuration:
-\`\`\`
-FLASK_ENV=development
-SECRET_KEY=your-secret-key-here
-MAIL_SERVER=smtp.gmail.com
-MAIL_PORT=587
-MAIL_USERNAME=your-email@gmail.com
-MAIL_PASSWORD=your-app-password
-\`\`\`
-
-### Email Configuration (Optional)
-To enable contact form email functionality, install Flask-Mail:
-\`\`\`bash
-pip install Flask-Mail
-\`\`\`
-
-Then update \`app.py\` with email configuration.
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 🚀 Deployment
-
-### Heroku Deployment
-1. Create \`Procfile\`:
-   \`\`\`
-   web: python app.py
-   \`\`\`
-
-2. Update \`app.py\` for production:
-   \`\`\`python
-   if __name__ == '__main__':
-       port = int(os.environ.get('PORT', 5000))
-       app.run(host='0.0.0.0', port=port)
-   \`\`\`
-
-### Vercel Deployment
-1. Create \`vercel.json\`:
-   \`\`\`json
-   {
-     "version": 2,
-     "builds": [
-       {
-         "src": "./app.py",
-         "use": "@vercel/python"
-       }
-     ],
-     "routes": [
-       {
-         "src": "/(.*)",
-         "dest": "/"
-       }
-     ]
-   }
-   \`\`\`
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- **AOS Library**: For smooth scroll animations
-- **Font Awesome**: For beautiful icons
-- **Google Fonts**: For typography
-- **Flask**: For the web framework
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-1. Check the documentation
-2. Search existing issues
-3. Create a new issue with detailed information
+<p align="center">
+  <img src="static\images\favicon\favicon.svg" alt="Adyaprana Logo" width="100"/>
+  <h1 align="center">Adyaprana.com</h1>
+  <p align="center">🌐 <strong>Personal Portfolio & Creative Space by Adyaprana</strong></p>
+</p>
 
 ---
 
-**Made with ❤️ and Python Flask**
-\`\`\`
-\`\`\`
+## 🏷️ Badges
 
-This complete Flask portfolio website includes:
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](#)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](#)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Repo Size](https://img.shields.io/github/repo-size/Adyaprana/adyaprana.com)](https://github.com/Adyaprana/adyaprana.com)
 
-1. **Full Flask backend** with routing and data handling
-2. **Premium CSS styling** with glassmorphism effects and animations
-3. **Responsive design** that works perfectly on all devices
-4. **Interactive JavaScript** for modals, forms, and animations
-5. **Complete project structure** ready for local development
-6. **Detailed documentation** for setup and customization
+---
 
-The website will work perfectly in your local VS Code environment with proper CSS rendering and all animations functioning smoothly. Just follow the installation steps in the README to get started!
-=======
-# adyaprana.com
-My Portfolio
+## 📚 Table of Contents
+
+- 📖 [**About**](#about)
+- 🌟 [**Features**](#features)
+- 🧑‍💻 [**Tech Stack**](#tech-stack)
+- 🎬 [**Live Demo**](#live-demo)
+- 🚀 [**Getting Started**](#getting-started)
+- 🧱 [**Project Structure**](#project-structure)
+- 📸 [**Screenshots**](#screenshots)
+- ✨ [**Customization**](#customization)
+- 🤝 [**Contributing**](#contributing)
+- 📄 [**License**](#license)
+- 👤 [**Author**](#author)
+
+---
+
+## 📖 About
+
+**Adyaprana.com** is a minimalist, responsive **portfolio website** crafted by **Adyaprana Pradhan**, built to showcase skills, projects, blogs, and creativity. This site represents a clean digital identity with elegant design and personal flair.
+
+---
+
+## 🌟 Features
+
+- 🧑‍💼 Personal Portfolio & Resume Section
+- 📂 Projects Showcase
+- 📝 Blog Articles (Markdown-compatible)
+- 🌓 Light & Dark Theme Toggle
+- 💬 Contact Form
+- ⚡ Smooth animations & transitions
+
+---
+
+## 🧑‍💻 Tech Stack
+
+- 🌐 **Frontend**: `HTML5`, `CSS3`, `JavaScript`
+- 🎨 **UI Framework**: Pure CSS with responsive layout
+- 🔧 **Tools**: `VSCode`, `Git`, `GitHub Pages`
+- 🛠️ **Deployment**: GitHub Pages
+
+---
+
+## 🎬 Live Demo
+
+> 🌍 Visit here: [https://adyaprana.com](www.https://adyaprana.com)
+
+[![Live Site](https://img.shields.io/badge/%F0%9F%94%97%20Visit%20Site-blue?style=for-the-badge)](www.https://adyaprana.com)
+
+---
+
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
+- A modern web browser
+- Git (optional for cloning)
+- Live Server or any static hosting for local preview
+
+### 📦 Installation
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/Adyaprana/adyaprana.com.git
+cd adyaprana.com
+
+# 2. (Optional) Open with Live Server or directly in browser
+```
+
+
+## 🧱 Project Structure
+
+```bash
+adyaprana.com/
+├── static/
+│   ├── assets/          # Logos, images, icons
+│   ├── css/             # Stylesheets
+│   └── js/              # Scripts for theme toggle, interactivity
+├── pages/               # Sub-pages like projects, blog, contact
+├── index.html           # Landing page
+├── LICENSE
+└── README.md
+```
+## 📸 Screenshots
+
+| 🌞 Home (Light Mode)                                   | 🌙 Home (Dark Mode)                                   |
+| ------------------------------------------------------ | ------------------------------------------------------ |
+| <img src="static\images\home_light.png" width="300"/>  | <img src="static\images\home_dark.png" width="300"/>   |
+
+| 📂 Projects                                           | ✉️ Contact                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ |
+| <img src="static\images\projects.png" width="300"/>    |<img src="static\images\contact.png" width="300"/>      |
+
+## ✨ Customization
+
+### 🎨 Colors & Fonts
+- Edit variables in `static/css/style.css` under `:root {}` to change theme colors and font settings.
+
+### 🌑 Theme Toggle
+- Open `static/js/main.js` and update the toggle logic to change how light/dark mode works.
+
+### 📝 Content
+- Modify `index.html` and files inside `pages/` to change text, links, or sections.
+
+### 📸 Images
+- Add or replace media in `static/assets/` and update their paths inside your HTML files.
+
+## 🤝 Contributing
+```
+# Fork the repository and clone it
+git clone https://github.com/yourusername/adyaprana.com.git
+cd adyaprana.com
+
+# Create a new branch
+git checkout -b feature/AmazingFeature
+
+# Commit your changes
+git commit -m "✨ Add AmazingFeature"
+
+# Push to GitHub
+git push origin feature/AmazingFeature
+
+# Open a Pull Request from GitHub interface
+```
+## 📄 License
+This project is licensed under the MIT License.  
+See the `LICENSE` file for details.
+## 👤 Author
+**Adyaprana Pradhan**
+
+- GitHub: [@Adyaprana](https://github.com/Adyaprana)
+- LinkedIn: [Adyaprana Pradhan](https://www.linkedin.com/in/adyaprana21)
+- Website: [adyaprana.com](www.https://adyaprana.com)
+
+> “Design is not just what it looks like and feels like. Design is how it works.” – Steve Jobs
