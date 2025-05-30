@@ -66,9 +66,9 @@
 
 ## 🎬 Live Demo
 
-> 🌍 Visit here: [https://adyaprana.com](www.https://adyaprana.com)
+> 🌍 Visit here: ([https://adyaprana.com](https://www.adyaprana.com/))
 
-[![Live Site](https://img.shields.io/badge/%F0%9F%94%97%20Visit%20Site-blue?style=for-the-badge)](www.https://adyaprana.com)
+[![Live Site](https://img.shields.io/badge/%F0%9F%94%97%20Visit%20Site-blue?style=for-the-badge)](https://www.adyaprana.com/)
 
 ---
 
@@ -153,6 +153,6 @@ See the `LICENSE` file for details.
 
 - GitHub: [@Adyaprana](https://github.com/Adyaprana)
 - LinkedIn: [Adyaprana Pradhan](https://www.linkedin.com/in/adyaprana21)
-- Website: [adyaprana.com](www.https://adyaprana.com)
+- Website: [(www.https://adyaprana.com)](https://www.adyaprana.com/)
 
 > “Design is not just what it looks like and feels like. Design is how it works.” – Steve Jobs
