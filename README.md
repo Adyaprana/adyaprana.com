@@ -153,6 +153,6 @@ See the `LICENSE` file for details.
 
 - GitHub: [@Adyaprana](https://github.com/Adyaprana)
 - LinkedIn: [Adyaprana Pradhan](https://www.linkedin.com/in/adyaprana21)
-- Website: [(www.https://adyaprana.com)](https://www.adyaprana.com/)
+- Website: [adyaprana.com](https://www.adyaprana.com/)
 
 > “Design is not just what it looks like and feels like. Design is how it works.” – Steve Jobs
