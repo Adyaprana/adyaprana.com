@@ -2,6 +2,25 @@ venv/
 __pycache__/
 *.pyc
 .env
+
+# Ignore Python bytecode and cache
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
