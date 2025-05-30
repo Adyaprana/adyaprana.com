@@ -231,3 +231,6 @@ This complete Flask portfolio website includes:
 6. **Detailed documentation** for setup and customization
 
 The website will work perfectly in your local VS Code environment with proper CSS rendering and all animations functioning smoothly. Just follow the installation steps in the README to get started!
+=======
+# adyaprana.com
+My Portfolio
