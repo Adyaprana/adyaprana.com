@@ -406,7 +406,7 @@ social_posts = [
 education_data = [
     {
         "institution": "KIIT Deemed to be University",
-        "degree": "Bachelor of Technology in Computer Science",
+        "degree": "Bachelor of Computer Applications",
         "period": "2020 - 2024",
         "description": "Specialized in AI/ML and Full-Stack Development",
         "logo": "static/images/kiit-logo.png"
