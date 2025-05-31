@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Git Commands Cheat Sheet</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      color: #2c3e50;
+      font-size: 1.5rem;
+      margin-top: 0;
+    }
+
+    .card p {
+      margin: 10px 0 15px;
+      color: #555;
+    }
+
+    pre {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-left: 5px solid #3498db;
+      overflow-x: auto;
+      font-size: 15px;
+      line-height: 1.6;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+      color: #2c3e50;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .workflow-card {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .workflow-card:hover {
+      transform: none;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Git Commands Cheat Sheet</h1>
+
+  <div class="workflow-card card">
+    <h2>🚀 Project Workflow: Create & Push to GitHub</h2>
+    <p>Follow these steps to initialize a Git repository and push your project to GitHub.</p>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><code># 1. Navigate to your project folder
+cd path/to/your-project
+
+# 2. Initialize a Git repo
+git init
+
+# 3. Add files to staging
+git add .
+
+# 4. Commit changes
+git commit -m "Initial commit"
+
+# 5. Create a repo on GitHub (manual step)
+
+# 6. Link local repo with remote
+git remote add origin https://github.com/yourusername/repo-name.git
+
+# 7. Push your code to GitHub
+git push -u origin main</code></pre>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>🔧 Setup & Configuration</h2>
+      <p>Set your name, email, default editor, and list global settings.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+git config --list
+git config --global core.editor "code --wait"</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>📁 Create & Clone</h2>
+      <p>Initialize a new repo or clone an existing one.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git init
+git clone &lt;repo_url&gt;</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>💾 Staging & Commit</h2>
+      <p>Track and save changes to your project.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git status
+git add .
+git add &lt;file&gt;
+git commit -m "message"
+git commit -am "skip staging and commit"</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>🔁 Branching</h2>
+      <p>Create, switch, and delete branches.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git branch
+git branch &lt;branch&gt;
+git checkout &lt;branch&gt;
+git checkout -b &lt;branch&gt;
+git branch -d &lt;branch&gt;</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>🔄 Merging & Rebase</h2>
+      <p>Integrate changes from another branch or rebase your commits.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git merge &lt;branch&gt;
+git rebase &lt;branch&gt;
+git rebase --abort
+git merge --abort</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>🚀 Push & Pull</h2>
+      <p>Send your changes to GitHub or fetch new changes.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git remote add origin &lt;url&gt;
+git push -u origin main
+git push
+git pull origin main</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>📜 Log & Diff</h2>
+      <p>View commit history and file differences.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git log
+git log --oneline
+git diff
+git show &lt;commit&gt;</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>🛠️ Undo Changes</h2>
+      <p>Revert, reset or checkout to discard changes.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git reset --soft HEAD~1
+git reset --hard HEAD~1
+git checkout -- &lt;file&gt;
+git revert &lt;commit&gt;</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>📂 Stashing</h2>
+      <p>Save changes temporarily without committing.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git stash
+git stash list
+git stash apply
+git stash pop</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>🏷️ Tags</h2>
+      <p>Create and push version tags for releases.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git tag v1.0
+git tag
+git show v1.0
+git push origin v1.0</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>🌐 Remote</h2>
+      <p>Manage remote repositories.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git remote -v
+git remote add origin &lt;url&gt;
+git remote remove origin</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>📦 Submodules</h2>
+      <p>Include external Git repositories inside a repo.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git submodule add &lt;repo&gt;
+git submodule init
+git submodule update</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>⚡ Aliases</h2>
+      <p>Create shortcuts for frequent commands.</p>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <pre><code>git config --global alias.st status
+git config --global alias.ci commit
+git config --global alias.br branch
+git st    # now works as git status</code></pre>
+    </div>
+  </div>
+
+  <script>
+    function copyCode(button) {
+      const codeBlock = button.nextElementSibling.querySelector('code');
+      const text = codeBlock.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        button.innerText = "Copied!";
+        setTimeout(() => {
+          button.innerText = "Copy";
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>
