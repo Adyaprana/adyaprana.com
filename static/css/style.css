@@ -1967,3 +1967,563 @@ main {
         gap: 0.5rem;
     }
 }
+
+
+
+
+/* Fixed Navbar CSS - Surface Pro 7 Complete Fix */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem; /* Reduced padding for more space */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transform: none;
+    margin: 0;
+    min-height: 60px; /* Ensure consistent height */
+}
+
+/* Logo stays on left - more compact */
+.navbar .logo {
+    font-size: 1.3rem; /* Smaller logo for more space */
+    font-weight: bold;
+    color: #4f46e5;
+    flex-shrink: 0;
+    margin: 0;
+    min-width: fit-content;
+}
+
+/* Desktop Navigation links - very compact for tablets */
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.8rem; /* Much smaller gap */
+    position: static;
+    transform: none;
+    left: auto;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    flex-shrink: 1; /* Allow shrinking */
+}
+
+.navbar .nav-links li {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.3rem 0.5rem; /* Much smaller padding */
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.8rem; /* Smaller font for tablets */
+    min-width: fit-content;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+    color: #4f46e5;
+    background: rgba(79, 70, 229, 0.1);
+}
+
+/* Right side controls container - compact */
+.navbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Smaller gap */
+    flex-shrink: 0;
+    min-width: fit-content;
+}
+
+/* Theme toggle and nav toggle - smaller */
+.theme-toggle,
+.nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem; /* Smaller padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    width: 32px; /* Fixed smaller width */
+    height: 32px; /* Fixed smaller height */
+}
+
+.theme-toggle:hover,
+.nav-toggle:hover {
+    background: rgba(79, 70, 229, 0.1);
+}
+
+/* Hide hamburger menu on desktop */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle span {
+    width: 16px; /* Smaller hamburger lines */
+    height: 2px;
+    background: #333;
+    margin: 1.5px 0;
+    transition: all 0.3s ease;
+    border-radius: 1px;
+}
+
+/* Surface Pro 7 and tablet specific fixes */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .navbar {
+        padding: 0.8rem 1rem; /* Even more compact */
+    }
+    
+    .navbar .logo {
+        font-size: 1.2rem; /* Smaller logo */
+    }
+    
+    .navbar .nav-links {
+        gap: 0.5rem; /* Minimal gap */
+    }
+    
+    .navbar .nav-links a {
+        padding: 0.25rem 0.4rem; /* Minimal padding */
+        font-size: 0.75rem; /* Smaller font */
+    }
+    
+    .theme-toggle,
+    .nav-toggle {
+        width: 28px;
+        height: 28px;
+        padding: 0.3rem;
+    }
+    
+    .navbar-controls {
+        gap: 0.3rem;
+    }
+}
+
+/* If still cramped on tablets, switch to hamburger menu */
+@media (max-width: 950px) {
+    .navbar .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+    
+    .navbar .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .navbar .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navbar .nav-links a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+    
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Hamburger animation */
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(3px, 3px);
+        background: #4f46e5;
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(3px, -3px);
+        background: #4f46e5;
+    }
+}
+
+/* Mobile Navigation - smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .navbar .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+    
+    .navbar .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .navbar .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navbar .nav-links a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+    
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Large screens - normal spacing */
+@media (min-width: 1200px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+    
+    .navbar .logo {
+        font-size: 1.5rem;
+    }
+    
+    .navbar .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .navbar .nav-links a {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .theme-toggle,
+    .nav-toggle {
+        width: 40px;
+        height: 40px;
+        padding: 0.5rem;
+    }
+    
+    .navbar-controls {
+        gap: 1rem;
+    }
+}
+
+/* Dark mode styles */
+.dark-mode .navbar {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .navbar .logo {
+    color: #60a5fa;
+}
+
+.dark-mode .navbar .nav-links {
+    background: rgba(26, 26, 26, 0.98);
+}
+
+.dark-mode .navbar .nav-links a {
+    color: #ffffff;
+}
+
+.dark-mode .navbar .nav-links a:hover,
+.dark-mode .navbar .nav-links a.active {
+    color: #60a5fa;
+    background: rgba(96, 165, 250, 0.1);
+}
+
+.dark-mode .theme-toggle:hover,
+.dark-mode .nav-toggle:hover {
+    background: rgba(96, 165, 250, 0.1);
+}
+
+.dark-mode .nav-toggle span {
+    background: #ffffff;
+}
+
+.dark-mode .nav-toggle.active span {
+    background: #60a5fa;
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main content positioning */
+main {
+    margin-top: 60px; /* Adjusted for smaller navbar */
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* Ensure all elements use box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fix for very small screens */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem;
+    }
+    
+    .navbar .logo {
+        font-size: 1.1rem;
+    }
+    
+    .navbar-controls {
+        gap: 0.25rem;
+    }
+}
+
+/* Fix main container alignment */
+main, .main-content, .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    transform: none;
+    left: auto;
+    right: auto;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fix about section specifically */
+.about-section, .hero-section, .profile-section {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    transform: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Fix profile image container */
+.profile-image-container, .hero-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem auto;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    transform: none;
+}
+
+.profile-image-container img, .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Fix text content alignment */
+.hero-title, .about-title, h1, h2 {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 1rem auto;
+    padding: 0 1rem;
+    transform: none;
+    box-sizing: border-box;
+}
+
+.hero-subtitle, .about-description, p {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    padding: 0 1rem;
+    transform: none;
+    box-sizing: border-box;
+}
+
+/* Fix button container */
+.button-container, .cta-buttons {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+    transform: none;
+    box-sizing: border-box;
+}
+
+.button-container .btn, .cta-buttons .btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+}
+
+/* Fix any wrapper containers */
+.wrapper, .page-wrapper, .content-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    transform: none;
+    overflow-x: hidden;
+}
+
+/* Fix sections that might be causing the tilt */
+section {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    transform: none;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+    .about-section, .hero-section, .profile-section {
+        padding: 1rem;
+        width: 100%;
+        margin: 0;
+        transform: none;
+    }
+    
+    .profile-image-container, .hero-image {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 1.5rem auto;
+    }
+    
+    .hero-title, .about-title, h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .hero-subtitle, .about-description, p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .button-container, .cta-buttons {
+        padding: 0 0.5rem;
+        max-width: 100%;
+    }
+}
+
+/* Fix any grid or flex containers that might be causing issues */
+.grid, .flex-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    transform: none;
+    box-sizing: border-box;
+}
+
+/* Ensure no elements extend beyond viewport */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Fix any background containers */
+.background, .bg-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    transform: none;
+    overflow-x: hidden;
+}
+
+/* Remove any potential transforms causing the tilt */
+.transform-none {
+    transform: none !important;
+}
+
+/* Apply transform-none to common elements that might be tilted */
+.hero-section *,
+.about-section *,
+.profile-section * {
+    transform: none;
+}
