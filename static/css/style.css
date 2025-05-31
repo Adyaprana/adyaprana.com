@@ -1712,3 +1712,258 @@ section {
 [data-theme="dark"] .project-card.loading::after {
   background: rgba(17, 24, 39, 0.8);
 }
+
+
+
+
+
+
+/* Fixed Navbar CSS - Proper Left/Right Positioning */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Remove any transform that was causing right shift */
+    transform: none;
+    margin: 0;
+}
+
+/* Logo stays on left */
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4f46e5;
+    flex-shrink: 0;
+    /* Remove any margin-right: auto that was causing issues */
+    margin: 0;
+}
+
+/* Desktop Navigation links - centered */
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    /* Remove absolute positioning that was causing issues */
+    position: static;
+    transform: none;
+    left: auto;
+}
+
+.navbar .nav-links li {
+    margin: 0;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+    color: #4f46e5;
+    background: rgba(79, 70, 229, 0.1);
+}
+
+/* Right side controls container */
+.navbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Theme toggle and nav toggle */
+.theme-toggle,
+.nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover,
+.nav-toggle:hover {
+    background: rgba(79, 70, 229, 0.1);
+}
+
+/* Hide hamburger menu on desktop */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle span {
+    width: 20px;
+    height: 2px;
+    background: #333;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+    border-radius: 1px;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        /* Ensure navbar stays at full width and proper position */
+        left: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+    }
+    
+    /* Hide desktop nav links */
+    .navbar .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+    
+    .navbar .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .navbar .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navbar .nav-links a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+    
+    /* Show hamburger menu */
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Hamburger animation */
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background: #4f46e5;
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+        background: #4f46e5;
+    }
+}
+
+/* Dark mode styles */
+.dark-mode .navbar {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .navbar .logo {
+    color: #60a5fa;
+}
+
+.dark-mode .navbar .nav-links {
+    background: rgba(26, 26, 26, 0.98);
+}
+
+.dark-mode .navbar .nav-links a {
+    color: #ffffff;
+}
+
+.dark-mode .navbar .nav-links a:hover,
+.dark-mode .navbar .nav-links a.active {
+    color: #60a5fa;
+    background: rgba(96, 165, 250, 0.1);
+}
+
+.dark-mode .theme-toggle:hover,
+.dark-mode .nav-toggle:hover {
+    background: rgba(96, 165, 250, 0.1);
+}
+
+.dark-mode .nav-toggle span {
+    background: #ffffff;
+}
+
+.dark-mode .nav-toggle.active span {
+    background: #60a5fa;
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Main content positioning */
+main {
+    margin-top: 70px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* Ensure all elements use box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Fix for very small screens */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem;
+    }
+    
+    .navbar .logo {
+        font-size: 1.2rem;
+    }
+    
+    .navbar-controls {
+        gap: 0.5rem;
+    }
+}
