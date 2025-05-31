@@ -261,7 +261,8 @@ blog_posts = [
         "read_time": "10 min read",
         "views": 1800,
         "likes": 134
-    }
+    },
+
 ]
 
 # Social media posts data
@@ -269,7 +270,7 @@ social_posts = [
     {
         "id": 1,
         "platform": "LinkedIn",
-        "content": "🍽️ Introducing Rasaalaya – The Ultimate Restaurant Listing & Ordering Platform!\n\nI'm thrilled to present Rasaalaya, a fully responsive web application built with Flask. This platform offers a seamless dining experience.",
+        "content": "🍽️ Introducing Rasaalaya – The Ultimate Restaurant Listing & Ordering Platform!\n\nI'm thrilled to present Rasaalaya, a fully responsive web application built with Flask. This platform offers a seamless dining experience.",                
         "image": "images/social-1.png",
         "date": "2025-05-04",
         "likes": 245,
