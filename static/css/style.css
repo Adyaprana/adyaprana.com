@@ -1690,6 +1690,7 @@ section {
   transform: translateY(0);
 }
 
+
 /* Loading Animation for Project Cards */
 .project-card.loading {
   pointer-events: none;
