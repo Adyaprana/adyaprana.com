@@ -74,7 +74,6 @@
 [![Live Site](https://img.shields.io/badge/%F0%9F%94%97%20Visit%20Site-blue?style=for-the-badge)](https://www.adyaprana.com/)
 
 ---
-
 ## 🚀 Getting Started
 
 ### ✅ Prerequisites
