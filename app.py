@@ -424,9 +424,9 @@ education_data = [
 
 future_projects_data = [
     {
-        "title": "Ai-Hedge-Fund",
+        "title": "MedAI Navigator",
         "status": "In Progress",
-        "description": "This will serve as the foundation for your sophisticated multi-agent investment platform with Perplexity integration and Indian market focus."
+        "description": "MedAI Navigator is an AI-powered, multilingual, and fully accessible health monitoring dashboard designed to empower users with real-time insights into their vital signs."
     },
     {
         "title": "MedAI Navigator",
