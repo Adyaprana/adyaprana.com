@@ -120,13 +120,14 @@ projects_data = [
     "live_url": "******************************",
     "video_url": "*********************************",
     "gallery": [
-        "images/healthy_diet_1.png",
-        "images/healthy_diet_2.png",
-        "images/healthy_diet_3.png",
-        "images/healthy_diet_4.png",
-        "images/healthy_diet_5.png",
-        "images/healthy_diet_6.png"
-    ],
+            "images/project3_1.png",
+            "images/project3_2.png",
+            "images/project3_3.png",
+            "images/project3_4.png",
+            "images/project3_5.png",
+            "images/project3_6.png"
+            
+       ],
     "challenges": "Ensuring accuracy in calorie and nutrient data, building a user-friendly and visually appealing interface, and managing real-time data input and tracking across different devices.",
     "impact": "Enabled users to maintain healthier eating habits, with over 65% reporting improved meal balance and consistency. Increased engagement with diet tracking by introducing a clean UI and intuitive meal scheduler.",
     "timeline": "3 months core development, 1 month UI enhancement and testing",
