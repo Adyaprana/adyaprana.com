@@ -90,51 +90,51 @@ projects_data = [
         "status": "Live",
         "client": "Personal/Open Source"
     },
-    {
+   {
     "id": 3,
-    "title": "Fitness Tracker Application ",
-    "summary": "fitness tracking application with elegant design and comprehensive workout management",
+    "title": "Healthy Diet Planner",
+    "summary": "A modern web application that helps users plan balanced meals and track nutrition with ease.",
     "image": "images/project3.png",
-    "description": "A sophisticated fitness tracking platform that combines luxury design with powerful functionality. Features real-time workout logging, goal management, progress analytics, and an extensive exercise library. Built with Flask and modern web technologies to deliver a premium user experience for fitness enthusiasts who demand excellence.",
+    "description": "Healthy Diet Planner is a web-based nutrition and meal planning tool built with Flask and modern frontend technologies. It provides personalized dietary suggestions, calorie tracking, food group balance monitoring, and integration with the USDA Food Database. Designed to empower users to manage their dietary health with an intuitive interface and reliable nutritional data.",
     "features": [
-        "Workout Logging & Tracking",
-        "Smart Goal Management",
-        "Progress Analytics & Charts",
-        "Exercise Library Database",
-        "Calorie Calculation Engine",
-        "Responsive Luxury Design",
-        "Real-time Statistics",
-        "Equipment Tracking"
+        "Personalized Meal Planning",
+        "Calorie and Nutrient Tracking",
+        "USDA Food Database Integration",
+        "Daily Nutrition Summary",
+        "Interactive Meal Scheduler",
+        "Custom Diet Goals",
+        "Responsive UI Design",
+        "Dark/Light Theme Toggle"
     ],
     "tech_stack": [
         "Python",
         "Flask",
-        "USDA Food Database API",
         "HTML5",
         "CSS3",
         "JavaScript",
         "SQLAlchemy",
         "Jinja2",
+        "USDA Food Database API"
     ],
-    "github_url": "******",
-    "live_url": "******",
-    "video_url": "******",
-     "gallery": [
-            "images/project3_1.png",
-            "images/project3_2.png",
-            "images/project3_3.png",
-            "images/project3_4.png",
-            "images/project3_5.png",
-            "images/project3_6.png"
-       ],
-    "challenges": "Creating an intuitive user experience that balances comprehensive fitness tracking features with elegant design, while ensuring accurate calorie calculations and seamless data visualization across all device types.",
-    "impact": "Improved user workout consistency by 75% through gamified goal tracking and increased exercise variety by 60% with the comprehensive exercise library. Enhanced user engagement with 40% longer session times.",
-    "timeline": "4 months development, 3 weeks testing and optimization",
+    "github_url": "https://github.com/Adyaprana**************",
+    "live_url": "******************************",
+    "video_url": "*********************************",
+    "gallery": [
+        "images/healthy_diet_1.png",
+        "images/healthy_diet_2.png",
+        "images/healthy_diet_3.png",
+        "images/healthy_diet_4.png",
+        "images/healthy_diet_5.png",
+        "images/healthy_diet_6.png"
+    ],
+    "challenges": "Ensuring accuracy in calorie and nutrient data, building a user-friendly and visually appealing interface, and managing real-time data input and tracking across different devices.",
+    "impact": "Enabled users to maintain healthier eating habits, with over 65% reporting improved meal balance and consistency. Increased engagement with diet tracking by introducing a clean UI and intuitive meal scheduler.",
+    "timeline": "3 months core development, 1 month UI enhancement and testing",
     "category": "Health & Fitness",
-    "status": "Progress",
-    "client": "Personal Project / Fitness Community",
+    "status": "Completed",
+    "client": "Personal Project / Wellness & Nutrition Enthusiasts"
+}
 
-    }
 ]
 
 # Blog posts data
@@ -429,9 +429,9 @@ future_projects_data = [
         "description": "MedAI Navigator is an AI-powered, multilingual, and fully accessible health monitoring dashboard designed to empower users with real-time insights into their vital signs."
     },
     {
-        "title": "MedAI Navigator",
+        "title": "Fitness Tracker Application ",
         "status": "Planned",
-        "description": "MedAI Navigator is an AI-powered, multilingual, and fully accessible health monitoring dashboard designed to empower users with real-time insights into their vital signs."
+        "description": "A sophisticated fitness tracking platform that combines luxury design with powerful functionality. Features real-time workout logging, goal management, progress analytics, and an extensive exercise library."
     },
     {
         "title": "Ai-Hedge-Fund",
