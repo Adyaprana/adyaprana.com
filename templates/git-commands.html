@@ -128,7 +128,17 @@ git remote add origin https://github.com/yourusername/repo-name.git
 
 
 # 7. Push your code to GitHub
-git push -u origin main</code></pre>
+git push -u origin main
+
+#✅ Option 1: Safe Pull + Push
+git pull origin main --rebase
+git push origin main
+#✅ Option 2: Force Push (use with caution)
+git push origin main --force
+git push -f origin main
+
+
+</code></pre>
   </div>
 
   <div class="container">
