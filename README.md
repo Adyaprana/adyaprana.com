@@ -38,7 +38,6 @@
 - 👤 [**Author**](#author)
 
 ---
-
 ## 📖 About
 
 **Adyaprana.com** is a minimalist, responsive **portfolio website** crafted by **Adyaprana Pradhan**, built to showcase skills, projects, blogs, and creativity. This site represents a clean digital identity with elegant design and personal flair.
