@@ -14,7 +14,7 @@ env/
 # Ignore IDE/editor folders
 .vscode/
 .idea/
-
+.vccode/
 # Ignore system files
 .DS_Store
 Thumbs.db
