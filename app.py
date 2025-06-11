@@ -134,7 +134,52 @@ projects_data = [
     "category": "Health & Fitness",
     "status": "Completed",
     "client": "Personal Project / Wellness & Nutrition Enthusiasts"
+},
+{
+    "id": 4,
+    "title": "Leela Kshetra - Temple Info Web App",
+    "summary": "A spiritual web application that brings real-world temple information online with devotion and simplicity.",
+    "image": "images/project4.png",
+    "description": "Leela Kshetra is a web-based informational platform dedicated to showcasing the cultural, spiritual, and event-based aspects of a real temple from my neighborhood. As my first complete web development project, it is built with Django and designed to provide an online presence for a local temple. The app enables devotees to view temple history, ongoing rituals, donation options, and participate in community services online. It reflects a blend of tradition and technology, developed with respect and passion for heritage preservation.",
+    "features": [
+        "Temple Overview with Real-Time Updates",
+        "Online Donation System (Secure & User-Friendly)",
+        "Ritual and Event Scheduling",
+        "Image Gallery of Deities and Festivals",
+        "Responsive UI with Clean Navigation",
+        "Admin Dashboard for Temple Management",
+        "Multi-page Layout with Modular Components",
+        "Deployed on Vercel for Public Access"
+    ],
+    "tech_stack": [
+        "Python",
+        "Django",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "SQLite",
+        "Bootstrap",
+        "Jinja2"
+    ],
+    "github_url": "https://github.com/Adyaprana/Leela-Kshetra",
+    "live_url": "https://leela-kshetra.vercel.app/",
+    "video_url": "",
+    "gallery": [
+        "images/project4_1.png",
+        "images/project4_2.png",
+        "images/project4_3.png",
+        "images/project4_4.png",
+        "images/project4_5.png",
+        "images/project4_6.png"
+    ],
+    "challenges": "Integrating secure payment features for donations, designing an easy-to-navigate structure for non-tech users, and representing spiritual content respectfully through technology.",
+    "impact": "Helped local devotees access temple updates and participate remotely in events and donations. Brought a real neighborhood temple online and preserved its cultural presence digitally. Received positive feedback from community members for accessibility and simplicity.",
+    "timeline": "2 months for MVP, followed by 2 weeks of bug fixes and deployment",
+    "category": "Cultural & Spiritual",
+    "status": "live",
+    "client": "Real Neighborhood Temple"
 }
+
 
 ]
 
