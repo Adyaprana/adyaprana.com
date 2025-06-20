@@ -273,6 +273,7 @@ blog_posts = [
         "views": 2100,
         "likes": 156
     },
+    
     {
         "id": 3,
         "title": "DevOps Best Practices for Modern Web Applications",
