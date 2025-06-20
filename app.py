@@ -163,7 +163,7 @@ projects_data = [
     ],
     "github_url": "https://github.com/Adyaprana/Leela-Kshetra",
     "live_url": "https://leela-kshetra.vercel.app/",
-    "video_url": "",
+    "video_url": "https://x.com/Adyaprana21/status/1936091444067901757",
     "gallery": [
         "images/project4_1.png",
         "images/project4_2.png",
