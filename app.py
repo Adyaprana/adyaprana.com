@@ -135,6 +135,7 @@ projects_data = [
     "status": "Completed",
     "client": "Personal Project / Wellness & Nutrition Enthusiasts"
 },
+
 {
     "id": 4,
     "title": "Leela Kshetra - Temple Info Web App",
