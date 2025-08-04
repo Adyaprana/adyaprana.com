@@ -457,7 +457,7 @@ education_data = [
         "institution": "Kristu Jayanti University, Bangalore",
         "degree": "Master of Computer Applications",
         "period": "2025 - 2027",
-        "description": "Specialized in AI/ML and DEVOPS",
+        "description": "Specialized in AI/ML and DevOps",
         "logo": "static/images/KJU_Logo.png"
 
     },
