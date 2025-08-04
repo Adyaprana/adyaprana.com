@@ -206,7 +206,7 @@ projects_data = [
   ],
   "github_url": "https://github.com/Adyaprana/securesight",
   "live_url": "https://securesight.vercel.app",
-  "video_url": null,
+  "video_url": "",
   "gallery": [
     "public/home.png",
     "public/admin.png",
