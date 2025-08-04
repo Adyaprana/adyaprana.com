@@ -179,7 +179,49 @@ projects_data = [
     "category": "Cultural & Spiritual",
     "status": "live",
     "client": "Real Neighborhood Temple"
-}
+},
+{
+  "id": 5,
+  "title": "SecureSight – Surveillance Dashboard Web App",
+  "summary": "A powerful and elegant surveillance dashboard to manage camera feeds, detect incidents, and visualize real-time analytics.",
+  "image": "images/project5.png",
+  "description": "SecureSight is a fully responsive, beautifully designed surveillance system built with Next.js 14 App Router. It offers a central dashboard for monitoring real-time security camera feeds, resolving incidents, and analyzing 24-hour timelines. Designed with TailwindCSS and Shadcn UI, the app features secure API routing, modular UI components, and a scalable architecture suitable for cloud deployment. It serves as a modern template for smart surveillance management systems.",
+  "features": [
+    "Real-time camera feed management",
+    "Incident detection and resolution interface",
+    "24-hour timeline chart with historical analytics",
+    "Secure API routes using Next.js App Router",
+    "Beautiful UI with TailwindCSS and Shadcn UI",
+    "Scalable architecture ready for cloud deployment"
+  ],
+  "tech_stack": [
+    "Next.js 14 (App Router)",
+    "TypeScript",
+    "TailwindCSS",
+    "Shadcn UI",
+    "Lucide Icons",
+    "REST API",
+    "PostgreSQL / SQLite / Supabase",
+    "Vercel / Netlify / Railway / Fly.io"
+  ],
+  "github_url": "https://github.com/Adyaprana/securesight",
+  "live_url": "https://securesight.vercel.app",
+  "video_url": null,
+  "gallery": [
+    "public/home.png",
+    "public/admin.png",
+    "public/analytics.png",
+    "public/cameras.png",
+    "public/incident.png",
+    "public/day-mode.png"
+  ],
+  "challenges": "Building modular routes with App Router, structuring real-time components, and maintaining secure API handling while keeping the UI highly responsive and user-friendly.",
+  "impact": "Provides a clean and scalable foundation for smart surveillance systems, useful for startups or personal security projects. It showcases modern full-stack web development practices with security, design, and scalability in mind.",
+  "timeline": "3 weeks to build MVP with real-time monitoring, UI design, and incident handling. Further improvements planned for mobile support and AI anomaly detection.",
+  "category": "Security & Surveillance",
+  "status": "live",
+  "client": "Personal/Portfolio Project"
+},
 
 
 ]
