@@ -205,16 +205,16 @@ projects_data = [
     "Vercel / Netlify / Railway / Fly.io"
   ],
   "github_url": "https://github.com/Adyaprana/securesight",
-  "live_url": "https://securesight.vercel.app",
+  "live_url": "https://securesight-phi.vercel.app",
   "video_url": "",
   "gallery": [
-    "public/home.png",
-    "public/admin.png",
-    "public/analytics.png",
-    "public/cameras.png",
-    "public/incident.png",
-    "public/day-mode.png"
-  ],
+        "images/project5_1.png",
+        "images/project5_2.png",
+        "images/project5_3.png",
+        "images/project5_4.png",
+        "images/project5_5.png",
+        "images/project5_6.png"
+    ],
   "challenges": "Building modular routes with App Router, structuring real-time components, and maintaining secure API handling while keeping the UI highly responsive and user-friendly.",
   "impact": "Provides a clean and scalable foundation for smart surveillance systems, useful for startups or personal security projects. It showcases modern full-stack web development practices with security, design, and scalability in mind.",
   "timeline": "3 weeks to build MVP with real-time monitoring, UI design, and incident handling. Further improvements planned for mobile support and AI anomaly detection.",
