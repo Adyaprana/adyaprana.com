@@ -182,7 +182,7 @@ projects_data = [
 },
 {
   "id": 5,
-  "title": "SecureSight – Surveillance Dashboard Web App",
+  "title": "SecureSight – Surveillance Dashboard",
   "summary": "A powerful and elegant surveillance dashboard to manage camera feeds, detect incidents, and visualize real-time analytics.",
   "image": "images/project5.png",
   "description": "SecureSight is a fully responsive, beautifully designed surveillance system built with Next.js 14 App Router. It offers a central dashboard for monitoring real-time security camera feeds, resolving incidents, and analyzing 24-hour timelines. Designed with TailwindCSS and Shadcn UI, the app features secure API routing, modular UI components, and a scalable architecture suitable for cloud deployment. It serves as a modern template for smart surveillance management systems.",
@@ -202,7 +202,7 @@ projects_data = [
     "Lucide Icons",
     "REST API",
     "PostgreSQL / SQLite / Supabase",
-    "Vercel / Netlify / Railway / Fly.io"
+    "Vercel"
   ],
   "github_url": "https://github.com/Adyaprana/securesight",
   "live_url": "https://securesight-phi.vercel.app",
@@ -217,11 +217,12 @@ projects_data = [
     ],
   "challenges": "Building modular routes with App Router, structuring real-time components, and maintaining secure API handling while keeping the UI highly responsive and user-friendly.",
   "impact": "Provides a clean and scalable foundation for smart surveillance systems, useful for startups or personal security projects. It showcases modern full-stack web development practices with security, design, and scalability in mind.",
-  "timeline": "3 weeks to build MVP with real-time monitoring, UI design, and incident handling. Further improvements planned for mobile support and AI anomaly detection.",
+  "timeline": "3 weeks to build MVP with real-time monitoring, UI design, and incident handling.",
   "category": "Security & Surveillance",
   "status": "live",
   "client": "Personal/Portfolio Project"
 },
+
 
 
 ]
