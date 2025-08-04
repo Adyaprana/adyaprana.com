@@ -454,9 +454,17 @@ social_posts = [
 # Education data
 education_data = [
     {
+        "institution": "Kristu Jayanti University, Bangalore",
+        "degree": "Master of Computer Applications",
+        "period": "2025 - 2027",
+        "description": "Specialized in AI/ML and DEVOPS",
+        "logo": "static/images/KJU_Logo.png"
+
+    },
+    {
         "institution": "KIIT Deemed to be University",
         "degree": "Bachelor of Computer Applications",
-        "period": "2020 - 2024",
+        "period": "2022 - 2025",
         "description": "Specialized in AI/ML and Full-Stack Development",
         "logo": "static/images/kiit-logo.png"
 
@@ -464,7 +472,7 @@ education_data = [
     {
         "institution": "NIST Higher Secondary School",
         "degree": "Higher Secondary Education",
-        "period": "2018 - 2020",
+        "period": "2020 - 2022",
         "description": "Science Stream with Computer Science",
         "logo": "static/images/nist-logo.png"
     }
