@@ -213,7 +213,7 @@ projects_data = [
         "images/project5_3.png",
         "images/project5_4.png",
         "images/project5_5.png",
-        "images/project5_6.png"
+        "images/project5_6.png",
     ],
   "challenges": "Building modular routes with App Router, structuring real-time components, and maintaining secure API handling while keeping the UI highly responsive and user-friendly.",
   "impact": "Provides a clean and scalable foundation for smart surveillance systems, useful for startups or personal security projects. It showcases modern full-stack web development practices with security, design, and scalability in mind.",
