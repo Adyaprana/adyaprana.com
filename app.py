@@ -222,6 +222,47 @@ projects_data = [
   "status": "live",
   "client": "Personal/Portfolio Project"
 },
+{
+  "id": 6,
+  "title": "Adyaprana.com – Personal Portfolio Website",
+  "summary": "A clean, responsive portfolio site to showcase skills, projects, blogs, and creative work with a modern touch.",
+  "image": "images/project6.png",
+  "description": "Adyaprana.com is a minimalist and responsive portfolio website designed and developed by Adyaprana Pradhan. Built with Flask and deployed on GitHub Pages, it serves as a digital identity showcasing personal projects, a Markdown-compatible blog, contact form, resume, and a fully responsive UI with light/dark mode toggle. With clean animations, elegant typography, and modular design, it reflects both professionalism and creativity.",
+  "features": [
+    "Responsive personal portfolio layout",
+    "Projects showcase section",
+    "Markdown-compatible blog article support",
+    "Light and dark theme toggle",
+    "Contact form integration",
+    "Smooth animations and elegant transitions"
+  ],
+  "tech_stack": [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "Python",
+    "Flask",
+    "Jinja2",
+    "GitHub Pages"
+  ],
+  "github_url": "https://github.com/Adyaprana/adyaprana.com",
+  "live_url": "https://www.adyaprana.com/",
+  "video_url": "https://www.linkedin.com/posts/adyaprana21_portfolio-webdevelopment-github-activity-7334549531369345024-JY7g?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD7caBcBCywqQWecOI5U8uTtlxJeS1QtTEE",
+ "gallery": [
+        "images/project6_1.png",
+        "images/project6_2.png",
+        "images/project6_3.png",
+        "images/project6_4.png",
+        "images/project6_5.png",
+        "images/project6_6.png",
+    ],
+  "challenges": "Designing a theme that balances minimalism and modern interaction, implementing a custom blog system with Markdown rendering, and deploying Flask templates statically on GitHub Pages.",
+  "impact": "Provides a polished personal brand and professional presence online. Shared with recruiters, collaborators, and the public to centralize work, identity, and blog content.",
+  "timeline": "2 weeks to develop MVP with ongoing improvements and content updates.",
+  "category": "Portfolio & Personal Branding",
+  "status": "live",
+  "client": "Self / Personal Brand"
+}
 
 
 
